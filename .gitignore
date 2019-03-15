@@ -1,0 +1,13 @@
+!node_modules/
+
+
+node_modules/*/
+
+/dist
+/app/client/lib
+.idea
+/BPTBuild
+out
+.vscode
+
+.nyc_output

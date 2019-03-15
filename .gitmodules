@@ -1,0 +1,7 @@
+[submodule "toolbox/docker-tools"]
+    path = toolbox/docker-tools
+    url = ../docker-tools.git
+[submodule "build-scripts"]
+	path = build-scripts
+	url = ../../isnw/build-scripts
+	branch = develop

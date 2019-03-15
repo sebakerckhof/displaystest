@@ -1,0 +1,36 @@
+{
+  "env": {
+    "development": {
+      "application/javascript": {
+        "presets": [
+          [
+            "env",
+            {
+              "targets": {
+                "chrome": 56
+              }
+            }
+          ]
+        ],
+        "plugins": [],
+        "sourceMaps": "inline"
+      }
+    },
+    "production": {
+      "application/javascript": {
+        "presets": [
+          [
+            "env",
+            {
+              "targets": {
+                "chrome": 56
+              }
+            }
+          ]
+        ],
+        "plugins": [],
+        "sourceMaps": "none"
+      }
+    }
+  }
+}

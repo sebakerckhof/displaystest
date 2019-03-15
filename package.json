@@ -1,0 +1,31 @@
+{
+  "name": "displaytest",
+  "productName": "Displaytest",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Barco",
+    "email": "weconnect@barco.com",
+    "url": "https://www.barco.com"
+  },
+  "license": "MIT",
+  "config": {
+    "forge": "./forge.config.js"
+  },
+  "dependencies": {
+    "electron-compile": "6.4.4",
+    "electron-debug": "2.1.0",
+    "electron-is-dev": "1.0.1",
+    "udev": "^0.5.0",
+    "xrandr": "^0.2.0"
+  },
+  "devDependencies": {
+    "@barco/electron-forge": "^5.3.5",
+    "@barco/electron-prebuilt-compile": "4.0.8",
+    "node-abi": "2.7.1"
+  }
+}
