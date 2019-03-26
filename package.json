@@ -21,11 +21,11 @@
     "electron-debug": "2.1.0",
     "electron-is-dev": "1.0.1",
     "udev": "^0.5.0",
-    "xrandr": "^0.2.0"
+    "x11": "^2.3.0"
   },
   "devDependencies": {
-    "@barco/electron-forge": "^5.3.5",
-    "@barco/electron-prebuilt-compile": "4.0.8",
+    "@barco/electron-forge": "^5.2.3",
+    "@barco/electron-prebuilt-compile": "4.0.5",
     "node-abi": "2.7.1"
   }
 }

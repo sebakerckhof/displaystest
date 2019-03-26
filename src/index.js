@@ -3,11 +3,15 @@ import path from 'path';
 import isDev from 'electron-is-dev';
 import { promisify } from 'util';
 import udev from 'udev';
-import { fsPromise } from 'fs';
+import fs, { promises as fsPromise } from 'fs';
 
 const createClient = promisify(require('x11').createClient);
 
 require('electron-debug')();
+
+// fs.watch('/home/barco/status', () => {
+//   console.log("FILE WATCH changed");
+// })
 
 async function getDisplaysFromSys() {
   const promiseList = udev.list('drm')
@@ -15,8 +19,17 @@ async function getDisplaysFromSys() {
   .map(async (display) => {
     let status;
     try {
-      status = await fsPromise.readFile(path.join(display.syspath, 'status'));
+      // console.log(path.join(display.syspath, 'status'));
+      const file = path.join(display.syspath, 'status');
+      status = await fsPromise.readFile(file, 'utf8');
+      status = status.trim();
+      console.log(file);
+      fs.watch(file, () => {
+        console.log("FILE WATCH changed");
+      })
+
     } catch (error) {
+      // console.log(error);
       status = 'disconnected';
     }
 
@@ -46,6 +59,7 @@ app.on('ready', async () => {
     const randr = await XRequire('randr');
     randr.SelectInput(root, randr.NotifyMask.ScreenChange);
     X.on('event', function(ev) {
+      console.log(ev);
       console.log("XRANDR change event");
     });
 
